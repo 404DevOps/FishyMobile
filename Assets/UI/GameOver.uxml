@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="Style.uss" />
+    <ui:VisualElement name="RootContainer" class="RootContainer">
+        <ui:VisualElement name="Container" style="flex-grow: 1; background-color: rgb(255, 255, 255); border-top-left-radius: 15px; border-bottom-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; justify-content: space-around;">
+            <ui:Label text="You ate up the whole Ocean!" display-tooltip-when-elided="true" name="txtGameOver" style="color: rgb(0, 0, 0); font-size: 76px; -unity-text-align: upper-center; margin-left: 36px; margin-right: 36px; margin-top: 36px; margin-bottom: 36px; -unity-font-style: bold;" />
+            <ui:Label text="Score: 123" display-tooltip-when-elided="true" name="txtScore" style="color: rgb(229, 97, 0); font-size: 42px; -unity-text-align: upper-center; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; -unity-font-style: bold;" />
+            <ui:Button text="Restart" display-tooltip-when-elided="true" name="btnRestart" class="button" style="color: rgba(255, 255, 255, 255);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
