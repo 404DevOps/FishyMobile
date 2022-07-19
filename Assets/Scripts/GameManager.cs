@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour
     public List<ColorValue> colorScale;
 
     public GameObject gameOverUI;
+    public GameObject canvas;
+    public GameObject player;
+
+    public Vector2 defaultPos = new Vector2(0,0);
 
     // Start is called before the first frame update
     void Start()
@@ -43,8 +47,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        isGameRunning = true;
-
+        isGameRunning = false;
     }
 
     private void Update()
@@ -64,8 +67,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void StartGame()
+    {
+        var allFish = GameObject.FindObjectsOfType<Fish>();
+        foreach (var fish in allFish)
+        {
+            Destroy(fish.gameObject);
+        }
+        scoreText.text = "Score: 0";
+        player.transform.position = defaultPos;
+        player.SetActive(true);
+        score = 0;
+        isGameRunning = true;
+        canvas.SetActive(true);
+        gameOverUI.SetActive(false);
+        SoundModule.Instance.PlayBlubb();
+    }
     public void GameOver(bool hasWon)
     {
+        canvas.SetActive(false);
         Debug.Log($"Game Over, Score: {score}");
         isGameRunning = false;
 

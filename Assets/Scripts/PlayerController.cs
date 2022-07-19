@@ -19,14 +19,14 @@ public class PlayerController : MonoBehaviour
     //stats
     public float size;
     public float growSize = 0.001f;
-
+    public float defaultSize = 0.3f;
     public float maxVelocity;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        size = transform.localScale.x;
+        size = defaultSize;
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerInput = GetComponent<PlayerInput>();
     }
@@ -34,7 +34,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovePlayer();
+        if (GameManager.Instance.isGameRunning)
+        {
+            MovePlayer();
+        }
     }
 
     private void MovePlayer()
@@ -96,25 +99,32 @@ public class PlayerController : MonoBehaviour
             else
             {
                 Die();
-                Destroy(gameObject);
+                size = defaultSize;
+                transform.localScale = new Vector2(size, size);
+                //Destroy(gameObject);
             }   
         }
     }
     private void Die()
     {
+        this.gameObject.SetActive(false);
+        SoundModule.Instance.PlayDead();
         GameManager.Instance.GameOver(false);
     }
 
     private void Grow()
     {
+        SoundModule.Instance.PlayBite();
+
         size = transform.localScale.x + growSize;
         transform.localScale = new Vector2(size, size);
 
         GameManager.Instance.AddScore();
 
-        if (size > 4.5f)
+        if (size > 3.5f)
         {
             GameManager.Instance.GameOver(true);
         }
+        
     }
 }
