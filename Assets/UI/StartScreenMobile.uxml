@@ -1,9 +1,9 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/Style.uss?fileID=7433441132597879392&amp;guid=b093cf07d2577a04080d84323c636e75&amp;type=3#Style" />
-    <ui:VisualElement name="RootContainer" class="RootContainer">
+    <ui:VisualElement name="RootContainer" class="RootContainer" style="padding-left: 10%; padding-right: 10%; padding-top: 10%; padding-bottom: 10%;">
         <ui:VisualElement name="Container" style="flex-grow: 1; background-color: rgb(255, 255, 255); border-top-left-radius: 15px; border-bottom-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; justify-content: center;">
-            <ui:Label text="Plenty Fish in the Sea" display-tooltip-when-elided="true" name="txtGameOver" style="color: rgb(0, 0, 0); font-size: 76px; -unity-text-align: upper-center; margin-left: 36px; margin-right: 36px; margin-top: 36px; margin-bottom: 36px; -unity-font-style: bold; -unity-font: url(&apos;project://database/Assets/Fonts/AFatChild-gD0E.ttf?fileID=12800000&amp;guid=9b4abbe0244420e44850a09afcb4aea2&amp;type=3#AFatChild-gD0E&apos;);" />
-            <ui:Button text="New Game" display-tooltip-when-elided="true" name="btnStart" enable-rich-text="false" class="button" style="color: rgb(255, 255, 255);" />
+            <ui:Label text="Plenty Fish in the Sea" display-tooltip-when-elided="true" name="txtGameOver" class="Title" style="font-size: 20%;" />
+            <ui:Button text="New Game" display-tooltip-when-elided="true" name="btnStart" enable-rich-text="false" class="buttonmobile" style="border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; color: rgba(255, 255, 255, 255); background-color: rgba(0, 0, 0, 255);" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

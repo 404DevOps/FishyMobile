@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Style.uss?fileID=7433441132597879392&amp;guid=b093cf07d2577a04080d84323c636e75&amp;type=3#Style" />
+    <ui:VisualElement name="RootContainer" class="RootContainer" style="padding-left: 7%; padding-right: 7%; padding-top: 7%; padding-bottom: 7%;">
+        <ui:VisualElement name="Container" style="flex-grow: 1; background-color: rgb(255, 255, 255); border-top-left-radius: 15px; border-bottom-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; justify-content: space-around;">
+            <ui:Label text="You ate up the whole Ocean!" display-tooltip-when-elided="true" name="txtGameOver" class="Title" style="font-size: 18%; margin-top: 5%; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+            <ui:Label text="Score: 123" display-tooltip-when-elided="true" name="txtScore" style="color: rgb(229, 97, 0); font-size: 15%; -unity-text-align: upper-center; margin-left: 0; margin-right: 0; margin-top: 6%; margin-bottom: 0; -unity-font-style: bold; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+            <ui:Button text="Restart" display-tooltip-when-elided="true" name="btnRestart" class="buttonmobile" style="color: rgba(255, 255, 255, 255); -unity-background-image-tint-color: rgba(0, 0, 0, 255); background-color: rgba(0, 0, 0, 255); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; justify-content: center; align-items: stretch; margin-bottom: 5%;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public float spawnIntervall;
     public float spawnIntervallMax;
     public float spawnIntervallMin;
+    public int spawnCount;
 
     public bool isGameRunning;
 
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
     public List<ColorValue> colorScale;
 
     public GameObject gameOverUI;
+    public GameObject startGameUI;
     public GameObject canvas;
     public GameObject player;
 
@@ -69,18 +71,23 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        var allFish = GameObject.FindObjectsOfType<Fish>();
+        startGameUI.SetActive(false);
+        gameOverUI.SetActive(false);
+        var allFish = FindObjectsOfType<Fish>();
         foreach (var fish in allFish)
         {
             Destroy(fish.gameObject);
         }
         scoreText.text = "Score: 0";
         player.transform.position = defaultPos;
+        var pc = player.GetComponent<PlayerController>();
+        pc.size = pc.defaultSize;
+        pc.transform.localScale = new Vector2(pc.size, pc.size);
         player.SetActive(true);
         score = 0;
         isGameRunning = true;
         canvas.SetActive(true);
-        gameOverUI.SetActive(false);
+
         SoundModule.Instance.PlayBlubb();
     }
     public void GameOver(bool hasWon)
@@ -94,16 +101,7 @@ public class GameManager : MonoBehaviour
         gameOverScript.Score = score;
 
         gameOverUI.SetActive(true);
-
-
-        if (hasWon) 
-        {
-            //Show Win GUI
-        }
-        else 
-        {
-            //Show loose GUI
-        }
+        player.SetActive(false);
     }
 
     public void AddScore()
@@ -125,9 +123,19 @@ public class GameManager : MonoBehaviour
 
         var fish = Instantiate(fishPrefab).GetComponent<Fish>();
         fish.moveDirection = side < 0 ? 1 : -1;
-        fish.size = UnityEngine.Random.Range(minSize, maxSize);
 
-      
+        //every fifth fish should be smaller than the player
+        if (spawnCount > 5)
+        {
+            spawnCount = 0;
+            float playerSize = player.GetComponent<PlayerController>().size;
+            fish.size = UnityEngine.Random.Range(minSize, playerSize > maxSize ? maxSize : playerSize);
+        }
+        else 
+        {
+            fish.size = UnityEngine.Random.Range(minSize, maxSize);
+            spawnCount++;
+        }
 
         fish.gameObject.transform.position = spawnPos;
         fish.gameObject.transform.localScale = new Vector2(fish.size, fish.size);
@@ -135,7 +143,7 @@ public class GameManager : MonoBehaviour
         var spriteRenderer = fish.GetComponent<SpriteRenderer>();
 
         if (side >= 0)
-           spriteRenderer.flipX = true;
+            fish.transform.rotation = new Quaternion(0, 180, 0, 0);
 
         spriteRenderer.color = GetFishColor((int)(fish.size * 100));
     }

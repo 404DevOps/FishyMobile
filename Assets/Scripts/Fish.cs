@@ -11,11 +11,11 @@ public class Fish : MonoBehaviour
     public int moveSpeed;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (GameManager.Instance.isGameRunning)
         {
-            transform.Translate(Vector3.right * moveDirection * moveSpeed * Time.deltaTime);
+            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
 
             //Destroy Fish out of Bounds.
             if ((moveDirection < 0 && transform.position.x < -GameManager.Instance.boundsX) || (moveDirection > 0 && transform.position.x > GameManager.Instance.boundsX))

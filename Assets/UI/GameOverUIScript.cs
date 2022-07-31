@@ -30,6 +30,5 @@ public class GameOverUIScript : MonoBehaviour
     private void Restart_Clicked()
     {
         GameManager.Instance.StartGame();
-        //SceneManager.LoadScene("Main", LoadSceneMode.Single);
     }
 }

@@ -27,16 +27,16 @@ VisualElement {
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 255);
+    background-color: rgb(0, 0, 0);
 }
 
 .button:hover {
-    flex-grow: 0;
+    flex-grow: 1;
     flex-shrink: 1;
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-left: 19%;
+    margin-right: 19%;
+    margin-top: 19%;
+    margin-bottom: 19%;
     min-height: 100px;
     font-size: 46px;
     border-top-left-radius: 5px;
@@ -45,6 +45,33 @@ VisualElement {
     border-bottom-right-radius: 5px;
     align-items: center;
     justify-content: flex-start;
-    flex-direction: column;
+    flex-direction: row;
     background-color: rgb(34, 34, 34);
+}
+
+.Title {
+    color: rgb(0, 0, 0);
+    font-size: 136%;
+    -unity-text-align: upper-center;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    -unity-font-style: bold;
+    -unity-font: url('project://database/Assets/Fonts/AFatChild-gD0E.ttf?fileID=12800000&guid=9b4abbe0244420e44850a09afcb4aea2&type=3#AFatChild-gD0E');
+    white-space: nowrap;
+}
+
+.buttonmobile {
+    color: rgba(255, 255, 255, 255);
+    min-height: 25%;
+    font-size: 17px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    margin-bottom: 0;
+    padding-left: -4px;
+    padding-right: -4px;
+    padding-top: -4px;
+    padding-bottom: -4px;
 }

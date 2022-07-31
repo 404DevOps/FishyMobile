@@ -20,6 +20,5 @@ public class StartGameUIScript : MonoBehaviour
     private void Start_Clicked()
     {
         GameManager.Instance.StartGame();
-        this.gameObject.SetActive(false);
     }
 }
