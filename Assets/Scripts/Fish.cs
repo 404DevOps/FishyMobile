@@ -8,7 +8,7 @@ public class Fish : MonoBehaviour
 {
     public float size;
     public int moveDirection;
-    public int moveSpeed;
+    public float moveSpeed;
 
     // Update is called once per frame
     void FixedUpdate()

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3780485705804121355}
   - component: {fileID: 8714138271157874098}
   - component: {fileID: 757331771745340894}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemyFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1154924103
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 3286163911610860551, guid: b26bcac51360ad644a8ba1c7b71ea26e, type: 3}
   m_Color: {r: 1, g: 1, b: 0, a: 1}

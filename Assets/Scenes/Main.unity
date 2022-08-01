@@ -874,6 +874,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7871556540511652807, guid: 4d999f8370b455248874366ff3686b9e, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7871556540511652807, guid: 4d999f8370b455248874366ff3686b9e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7871556540511652807, guid: 4d999f8370b455248874366ff3686b9e, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1154924103
+      objectReference: {fileID: 0}
+    - target: {fileID: -7871556540511652807, guid: 4d999f8370b455248874366ff3686b9e, type: 3}
       propertyPath: m_SpriteSortPoint
       value: 0
       objectReference: {fileID: 0}
@@ -882,8 +894,12 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: -3888481672020999207, guid: 4d999f8370b455248874366ff3686b9e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -3888481672020999207, guid: 4d999f8370b455248874366ff3686b9e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8742538545776668643, guid: 4d999f8370b455248874366ff3686b9e, type: 3}
       propertyPath: m_RootOrder
@@ -960,13 +976,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1840727283d77a641b618163dfbb45e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 11
+  moveSpeed: 5
   boundsX: 8.4
   boundsY: 4.7
   size: 1
-  growSize: 0.025
+  growSize: 0.015
   defaultSize: 0.3
-  maxVelocity: 4
+  maxVelocity: 3
 --- !u!114 &1134250412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1013,7 +1029,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0.05
@@ -1339,6 +1355,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d57b9b3dd3dc8194f9ec785cf10284e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1525162159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1525162160}
+  - component: {fileID: 1525162161}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1525162160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525162159}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.30446714, y: 0.28733993, z: 0.07638538}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1525162161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525162159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20139f2239d8ad48aa152ae7b2768c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 7835471932464149227, guid: c57574079ee2b7348b99069c3b7cde5f, type: 3}
+  colorScale:
+  - Key: 5
+    Value: {r: 0.8490566, g: 0.8205304, b: 0.020024916, a: 1}
+  - Key: 20
+    Value: {r: 1, g: 0.7238838, b: 0, a: 1}
+  - Key: 35
+    Value: {r: 0.8679245, g: 0.5026264, b: 0, a: 1}
+  - Key: 50
+    Value: {r: 0.8867924, g: 0.4050804, b: 0, a: 1}
+  - Key: 65
+    Value: {r: 0.8862745, g: 0.19465816, b: 0, a: 1}
+  - Key: 80
+    Value: {r: 0.7075472, g: 0.014607961, b: 0, a: 1}
+  - Key: 100
+    Value: {r: 0.745283, g: 0.010546438, b: 0.22753938, a: 1}
+  - Key: 115
+    Value: {r: 0.5754717, g: 0, b: 0.22211872, a: 1}
+  - Key: 130
+    Value: {r: 0.5764706, g: 0, b: 0.41649938, a: 1}
+  - Key: 145
+    Value: {r: 0.44569337, g: 0.0023584962, b: 0.5, a: 1}
+  - Key: 160
+    Value: {r: 0.2625475, g: 0.0061409646, b: 0.4339623, a: 1}
+  - Key: 175
+    Value: {r: 0.14056794, g: 0.007843133, b: 0.43529412, a: 1}
+  - Key: 200
+    Value: {r: 0.0151977325, g: 0.007843133, b: 0.43529412, a: 1}
+  minSize: 0.015
+  maxSize: 1.8
+  minSpeed: 1
+  maxSpeed: 4
+  spawnCount: 0
 --- !u!1 &1570005744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,52 +1722,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83f55c9ed33d1bd47900133f68cfd617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 7835471932464149227, guid: c57574079ee2b7348b99069c3b7cde5f, type: 3}
-  boundsX: 15
-  boundsY: 4.7
-  minSize: 0.03
-  maxSize: 1.8
-  spawnIntervall: 0.5
-  spawnIntervallMax: 2
-  spawnIntervallMin: 0.75
-  spawnCount: 0
-  isGameRunning: 0
-  timeSinceLastSpawn: 0
   score: 0
   scoreText: {fileID: 1344917537}
-  colorScale:
-  - Key: 5
-    Value: {r: 0.8773585, g: 0.5285599, b: 0.020692414, a: 1}
-  - Key: 15
-    Value: {r: 0.8784314, g: 0.33018553, b: 0.019607821, a: 1}
-  - Key: 30
-    Value: {r: 1, g: 0.18401569, b: 0, a: 1}
-  - Key: 45
-    Value: {r: 1, g: 0.060130507, b: 0.033018887, a: 1}
-  - Key: 65
-    Value: {r: 0.8392157, g: 0, b: 0.15083939, a: 1}
-  - Key: 65
-    Value: {r: 0.8392157, g: 0, b: 0.29128078, a: 1}
-  - Key: 85
-    Value: {r: 0.8392157, g: 0, b: 0.52176785, a: 1}
-  - Key: 100
-    Value: {r: 0.8392157, g: 0, b: 0.82942915, a: 1}
-  - Key: 115
-    Value: {r: 0.6082172, g: 0, b: 0.8392157, a: 1}
-  - Key: 130
-    Value: {r: 0.4868931, g: 0, b: 0.8392157, a: 1}
-  - Key: 145
-    Value: {r: 0.33050096, g: 0, b: 0.8392157, a: 1}
-  - Key: 160
-    Value: {r: 0.042363837, g: 0.10435294, b: 0.5283019, a: 1}
-  - Key: 175
-    Value: {r: 0.031372543, g: 0.179412, b: 0.34901962, a: 1}
-  - Key: 190
-    Value: {r: 0.047058806, g: 0.36430046, b: 0.48235294, a: 1}
   gameOverUI: {fileID: 911729244}
   startGameUI: {fileID: 1410419369}
   canvas: {fileID: 1125744430}
   player: {fileID: 1134250409}
+  isGameRunning: 0
+  timeSinceLastSpawn: 0
+  spawnIntervall: 0.5
+  spawnIntervallMax: 2
+  spawnIntervallMin: 0.75
+  boundsX: 15
+  boundsY: 4.7
   defaultPos: {x: 0, y: 0}
 --- !u!4 &1702169117
 Transform:

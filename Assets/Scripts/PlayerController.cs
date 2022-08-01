@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
             //transform.Translate(Vector3.up * joystickAxis.y * Time.deltaTime * moveSpeed);
             rb.AddForce(Vector3.up * joystickAxis.y * moveSpeed);
         }
-        if (joystickAxis.y > 0 && transform.position.y < boundsY)
+        if (joystickAxis.y > 0  && transform.position.y < boundsY)
         {
             //transform.Translate(Vector3.up * joystickAxis.y * Time.deltaTime * moveSpeed);
             rb.AddForce(Vector3.up * joystickAxis.y * moveSpeed);
