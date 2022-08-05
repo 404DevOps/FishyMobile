@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
             //only move if inside bounds
             //transform.Translate(Vector3.right * joystickAxis.x * Time.deltaTime * moveSpeed);
             rb.AddForce(Vector3.right * joystickAxis.x * moveSpeed);
+            transform.rotation = new Quaternion(0, 0, 0, 0);
             spriteRenderer.flipX = false;
         }
         if (joystickAxis.x < 0 && transform.position.x > -boundsX)
@@ -56,7 +57,7 @@ public class PlayerController : MonoBehaviour
 
             //transform.Translate(Vector3.right * joystickAxis.x * Time.deltaTime * moveSpeed);
             rb.AddForce(Vector3.right * joystickAxis.x * moveSpeed);
-            spriteRenderer.flipX = true;
+            transform.rotation = new Quaternion(0, 180, 0, 0);
         }
         if (joystickAxis.y < 0 && transform.position.y > -boundsY)
         {
@@ -107,7 +108,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Die()
     {
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
         SoundModule.Instance.PlayDead();
         GameManager.Instance.GameOver(false);
     }
@@ -121,7 +122,7 @@ public class PlayerController : MonoBehaviour
 
         GameManager.Instance.AddScore();
 
-        if (size > 3.5f)
+        if (size > 2.7)
         {
             GameManager.Instance.GameOver(true);
         }
